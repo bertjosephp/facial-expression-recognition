@@ -1,12 +1,13 @@
 import cv2
 import tensorflow as tf
 
+
 class FaceDetector:
 
-    def __init__(self, source=0, filepath=None):
+    def __init__(self, source=0, filepath='emotion_v2.keras'):
         self.face_classifier = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
         self.video_capture = cv2.VideoCapture(source)
-        # self.model = tf.keras.models.load_model(filepath)
+        self.model = tf.keras.models.load_model(filepath)
 
     def detect_faces(self, frame):
         gray_image = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -19,6 +20,9 @@ class FaceDetector:
             cv2.putText(frame, text=emotion, org=(x, y - 10), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=3, color=(0, 0, 255), thickness=4)
 
     def predict_emotion(self, face_image):
+        resized_face_image = cv2.resize(face_image, (48, 48))
+        if resized_face_image.shape[2] == 3:
+            resized_face_image = cv2.cvtColor(resized_face_image, cv2.COLOR_BGR2GRAY)
         pass
     
     def run(self):
@@ -28,7 +32,7 @@ class FaceDetector:
                 break
 
             faces = self.detect_faces(frame)
-            emotions = [self.predict_emotion(frame[y:y+h, x:x+h]) for (x, y, w, h) in faces]
+            emotions = [self.predict_emotion(frame[y:y+h, x:x+w]) for (x, y, w, h) in faces]
             self.draw_bounding_boxes(frame, faces, emotions)
 
             cv2.imshow("Live Face Detection", frame)
