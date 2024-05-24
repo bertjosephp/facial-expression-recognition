@@ -21,10 +21,12 @@ opencv-python==4.9.0.80
 opt-einsum==3.3.0
 optree==0.11.0
 packaging==24.0
+pillow==10.3.0
 protobuf==4.25.3
 Pygments==2.18.0
 requests==2.32.2
 rich==13.7.1
+scipy==1.13.1
 six==1.16.0
 tensorboard==2.16.2
 tensorboard-data-server==0.7.2
