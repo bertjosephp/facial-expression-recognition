@@ -1,5 +1,6 @@
 import cv2
 import tensorflow as tf
+import numpy as np
 
 
 class FaceDetector:
@@ -8,6 +9,7 @@ class FaceDetector:
         self.face_classifier = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
         self.video_capture = cv2.VideoCapture(source)
         self.model = tf.keras.models.load_model(filepath)
+        self.emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 
     def detect_faces(self, frame):
         gray_image = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -20,10 +22,16 @@ class FaceDetector:
             cv2.putText(frame, text=emotion, org=(x, y - 10), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=3, color=(0, 0, 255), thickness=4)
 
     def predict_emotion(self, face_image):
-        resized_face_image = cv2.resize(face_image, (48, 48))
-        if resized_face_image.shape[2] == 3:
-            resized_face_image = cv2.cvtColor(resized_face_image, cv2.COLOR_BGR2GRAY)
-        pass
+        if face_image.ndim == 2 or face_image.shape[2] == 1:
+            face_image = cv2.cvtColor(face_image, cv2.COLOR_GRAY2RGB)
+        face_image = cv2.resize(face_image, (48, 48))
+        face_image = face_image.astype('float32') / 255.0
+        face_image = np.expand_dims(face_image, axis=0)
+        
+        predictions = self.model.predict(face_image)
+        emotion_index = np.argmax(predictions)
+        return self.emotion_labels[emotion_index]
+
     
     def run(self):
         while True:
