@@ -9,7 +9,7 @@ class FaceDetector:
 
     def detect_faces(self, frame):
         gray_image = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        faces = self.face_classifier.detectMultiScale(gray_image, scaleFactor=1.5, minNeighbors=4, minSize=(30, 30))
+        faces = self.face_classifier.detectMultiScale(gray_image, scaleFactor=1.2, minNeighbors=4, minSize=(30, 30))
         return faces
     
     def draw_bounding_boxes(self, frame, faces):
