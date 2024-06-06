@@ -99,9 +99,10 @@ def test_model(net ,testloader, criterion, device):
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
 
+    test_loss = running_loss / len(testloader)
     test_accuracy = 100 * correct / total
 
-    return test_accuracy
+    return test_loss, test_accuracy
 
 
 def save_checkpoint(state_dict, filename='model_checkpoint.pth'):
