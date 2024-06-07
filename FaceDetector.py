@@ -7,7 +7,7 @@ from Net import Net
 
 class FaceDetector:
 
-    def __init__(self, source=0, filepath='emotion_v3.pth'):
+    def __init__(self, source=0, filepath='model_checkpoint.pth'):
         self.face_classifier = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
         self.video_capture = cv2.VideoCapture(source)
         self.model = Net()
