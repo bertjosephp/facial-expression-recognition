@@ -13,11 +13,13 @@ from Net import Net
 def load_test_data(test_dir):
     test_images = []
     test_labels = []
-    emotion_labels = ['angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral']
+    emotion_labels = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
     label_map = {label: idx for idx, label in enumerate(emotion_labels)}
 
     for label in emotion_labels:
         img_dir = os.path.join(test_dir, label)
+        print(f"Opening folder '{img_dir}' for label '{label}'")
+
         for img_name in os.listdir(img_dir):
             img_path = os.path.join(img_dir, img_name)
             img = cv2.imread(img_path)

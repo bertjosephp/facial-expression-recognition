@@ -13,7 +13,7 @@ class FaceDetector:
         self.model = Net()
         self.model.load_state_dict(torch.load(filepath))
         self.model.eval()
-        self.emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
+        self.emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise']
         self.transform = transforms.Compose([
             transforms.ToPILImage(),
             transforms.Resize((48, 48)),
