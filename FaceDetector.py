@@ -7,13 +7,13 @@ from Net import Net
 
 class FaceDetector:
 
-    def __init__(self, source=0, filepath='emotion_v3.pth'):
+    def __init__(self, source=0, filepath='model_checkpoint.pth'):
         self.face_classifier = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
         self.video_capture = cv2.VideoCapture(source)
         self.model = Net()
         self.model.load_state_dict(torch.load(filepath))
         self.model.eval()
-        self.emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
+        self.emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise']
         self.transform = transforms.Compose([
             transforms.ToPILImage(),
             transforms.Resize((48, 48)),

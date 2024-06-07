@@ -1,0 +1,148 @@
+Starting training . . .
+Epoch 1, Train Loss: 1.839, Train Accuracy: 23.62%, Test Loss: 1.803, Test Accuracy: 24.67%, Time: 88.95s
+Saved the model with the highest test accuracy: 24.67%
+Epoch 2, Train Loss: 1.809, Train Accuracy: 24.93%, Test Loss: 1.812, Test Accuracy: 24.71%, Time: 88.30s
+Saved the model with the highest test accuracy: 24.71%
+Epoch 3, Train Loss: 1.802, Train Accuracy: 24.91%, Test Loss: 1.780, Test Accuracy: 25.23%, Time: 86.80s
+Saved the model with the highest test accuracy: 25.23%
+Epoch 4, Train Loss: 1.794, Train Accuracy: 25.52%, Test Loss: 1.795, Test Accuracy: 27.19%, Time: 87.54s
+Saved the model with the highest test accuracy: 27.19%
+Epoch 5, Train Loss: 1.764, Train Accuracy: 27.21%, Test Loss: 1.983, Test Accuracy: 27.44%, Time: 86.98s
+Saved the model with the highest test accuracy: 27.44%
+Epoch 6, Train Loss: 1.720, Train Accuracy: 29.40%, Test Loss: 1.621, Test Accuracy: 32.11%, Time: 86.32s
+Saved the model with the highest test accuracy: 32.11%
+Epoch 7, Train Loss: 1.641, Train Accuracy: 33.34%, Test Loss: 1.475, Test Accuracy: 42.31%, Time: 87.97s
+Saved the model with the highest test accuracy: 42.31%
+Epoch 8, Train Loss: 1.563, Train Accuracy: 37.72%, Test Loss: 1.465, Test Accuracy: 43.47%, Time: 87.61s
+Saved the model with the highest test accuracy: 43.47%
+Epoch 9, Train Loss: 1.487, Train Accuracy: 40.88%, Test Loss: 1.365, Test Accuracy: 45.67%, Time: 88.10s
+Saved the model with the highest test accuracy: 45.67%
+Epoch 10, Train Loss: 1.444, Train Accuracy: 43.27%, Test Loss: 1.322, Test Accuracy: 47.37%, Time: 87.37s
+Saved the model with the highest test accuracy: 47.37%
+Epoch 11, Train Loss: 1.397, Train Accuracy: 45.92%, Test Loss: 1.235, Test Accuracy: 52.12%, Time: 85.86s
+Saved the model with the highest test accuracy: 52.12%
+Epoch 12, Train Loss: 1.350, Train Accuracy: 48.58%, Test Loss: 1.227, Test Accuracy: 52.38%, Time: 86.28s
+Saved the model with the highest test accuracy: 52.38%
+Epoch 13, Train Loss: 1.321, Train Accuracy: 49.27%, Test Loss: 1.180, Test Accuracy: 54.15%, Time: 85.74s
+Saved the model with the highest test accuracy: 54.15%
+Epoch 14, Train Loss: 1.282, Train Accuracy: 51.44%, Test Loss: 1.179, Test Accuracy: 54.19%, Time: 85.40s
+Saved the model with the highest test accuracy: 54.19%
+Epoch 15, Train Loss: 1.259, Train Accuracy: 52.02%, Test Loss: 1.223, Test Accuracy: 54.51%, Time: 86.41s
+Saved the model with the highest test accuracy: 54.51%
+Epoch 16, Train Loss: 1.227, Train Accuracy: 53.43%, Test Loss: 1.183, Test Accuracy: 54.68%, Time: 86.20s
+Saved the model with the highest test accuracy: 54.68%
+Epoch 17, Train Loss: 1.208, Train Accuracy: 54.42%, Test Loss: 1.163, Test Accuracy: 56.07%, Time: 85.92s
+Saved the model with the highest test accuracy: 56.07%
+Epoch 18, Train Loss: 1.187, Train Accuracy: 54.88%, Test Loss: 1.100, Test Accuracy: 58.32%, Time: 85.95s
+Saved the model with the highest test accuracy: 58.32%
+Epoch 19, Train Loss: 1.169, Train Accuracy: 56.05%, Test Loss: 1.195, Test Accuracy: 55.57%, Time: 86.16s
+Epoch 20, Train Loss: 1.156, Train Accuracy: 56.64%, Test Loss: 1.115, Test Accuracy: 57.70%, Time: 86.83s
+Epoch 21, Train Loss: 1.136, Train Accuracy: 57.26%, Test Loss: 1.070, Test Accuracy: 59.01%, Time: 86.23s
+Saved the model with the highest test accuracy: 59.01%
+Epoch 22, Train Loss: 1.123, Train Accuracy: 57.81%, Test Loss: 1.027, Test Accuracy: 60.37%, Time: 86.51s
+Saved the model with the highest test accuracy: 60.37%
+Epoch 23, Train Loss: 1.112, Train Accuracy: 58.30%, Test Loss: 1.030, Test Accuracy: 60.77%, Time: 86.33s
+Saved the model with the highest test accuracy: 60.77%
+Epoch 24, Train Loss: 1.096, Train Accuracy: 58.90%, Test Loss: 1.043, Test Accuracy: 60.59%, Time: 86.16s
+Epoch 25, Train Loss: 1.084, Train Accuracy: 59.35%, Test Loss: 1.039, Test Accuracy: 60.56%, Time: 85.68s
+Epoch 26, Train Loss: 1.076, Train Accuracy: 59.58%, Test Loss: 1.040, Test Accuracy: 60.69%, Time: 86.35s
+Epoch 27, Train Loss: 1.010, Train Accuracy: 62.30%, Test Loss: 0.959, Test Accuracy: 64.06%, Time: 86.22s
+Saved the model with the highest test accuracy: 64.06%
+Epoch 28, Train Loss: 0.990, Train Accuracy: 63.03%, Test Loss: 0.941, Test Accuracy: 64.47%, Time: 86.11s
+Saved the model with the highest test accuracy: 64.47%
+Epoch 29, Train Loss: 0.977, Train Accuracy: 63.24%, Test Loss: 0.952, Test Accuracy: 63.90%, Time: 87.34s
+Epoch 30, Train Loss: 0.972, Train Accuracy: 63.84%, Test Loss: 0.942, Test Accuracy: 64.78%, Time: 86.35s
+Saved the model with the highest test accuracy: 64.78%
+Epoch 31, Train Loss: 0.967, Train Accuracy: 63.80%, Test Loss: 0.937, Test Accuracy: 64.86%, Time: 86.27s
+Saved the model with the highest test accuracy: 64.86%
+Epoch 32, Train Loss: 0.958, Train Accuracy: 64.19%, Test Loss: 0.929, Test Accuracy: 65.16%, Time: 85.54s
+Saved the model with the highest test accuracy: 65.16%
+Epoch 33, Train Loss: 0.952, Train Accuracy: 64.56%, Test Loss: 0.928, Test Accuracy: 65.51%, Time: 85.61s
+Saved the model with the highest test accuracy: 65.51%
+Epoch 34, Train Loss: 0.954, Train Accuracy: 64.45%, Test Loss: 0.926, Test Accuracy: 64.86%, Time: 85.56s
+Epoch 35, Train Loss: 0.946, Train Accuracy: 64.72%, Test Loss: 0.927, Test Accuracy: 65.56%, Time: 85.58s
+Saved the model with the highest test accuracy: 65.56%
+Epoch 36, Train Loss: 0.936, Train Accuracy: 64.72%, Test Loss: 0.929, Test Accuracy: 65.83%, Time: 85.47s
+Saved the model with the highest test accuracy: 65.83%
+Epoch 37, Train Loss: 0.935, Train Accuracy: 64.96%, Test Loss: 0.920, Test Accuracy: 64.89%, Time: 86.05s
+Epoch 38, Train Loss: 0.928, Train Accuracy: 65.42%, Test Loss: 0.910, Test Accuracy: 65.90%, Time: 86.59s
+Saved the model with the highest test accuracy: 65.90%
+Epoch 39, Train Loss: 0.924, Train Accuracy: 65.70%, Test Loss: 0.908, Test Accuracy: 65.39%, Time: 86.23s
+Epoch 40, Train Loss: 0.922, Train Accuracy: 65.46%, Test Loss: 0.926, Test Accuracy: 65.74%, Time: 86.58s
+Epoch 41, Train Loss: 0.916, Train Accuracy: 65.83%, Test Loss: 0.914, Test Accuracy: 66.17%, Time: 86.30s
+Saved the model with the highest test accuracy: 66.17%
+Epoch 42, Train Loss: 0.910, Train Accuracy: 66.00%, Test Loss: 0.904, Test Accuracy: 66.17%, Time: 87.35s
+Epoch 43, Train Loss: 0.909, Train Accuracy: 65.97%, Test Loss: 0.907, Test Accuracy: 66.16%, Time: 86.98s
+Epoch 44, Train Loss: 0.903, Train Accuracy: 66.31%, Test Loss: 0.909, Test Accuracy: 66.44%, Time: 86.66s
+Saved the model with the highest test accuracy: 66.44%
+Epoch 45, Train Loss: 0.898, Train Accuracy: 66.55%, Test Loss: 0.898, Test Accuracy: 66.51%, Time: 93.49s
+Saved the model with the highest test accuracy: 66.51%
+Epoch 46, Train Loss: 0.895, Train Accuracy: 66.35%, Test Loss: 0.916, Test Accuracy: 66.44%, Time: 86.73s
+Epoch 47, Train Loss: 0.898, Train Accuracy: 66.35%, Test Loss: 0.906, Test Accuracy: 66.59%, Time: 86.79s
+Saved the model with the highest test accuracy: 66.59%
+Epoch 48, Train Loss: 0.893, Train Accuracy: 66.71%, Test Loss: 0.893, Test Accuracy: 66.79%, Time: 86.76s
+Saved the model with the highest test accuracy: 66.79%
+Epoch 49, Train Loss: 0.889, Train Accuracy: 66.62%, Test Loss: 0.917, Test Accuracy: 65.84%, Time: 86.36s
+Epoch 50, Train Loss: 0.887, Train Accuracy: 66.74%, Test Loss: 0.899, Test Accuracy: 66.70%, Time: 87.51s
+Epoch 51, Train Loss: 0.882, Train Accuracy: 67.30%, Test Loss: 0.904, Test Accuracy: 66.40%, Time: 87.24s
+Epoch 52, Train Loss: 0.856, Train Accuracy: 68.14%, Test Loss: 0.887, Test Accuracy: 67.55%, Time: 86.81s
+Saved the model with the highest test accuracy: 67.55%
+Epoch 53, Train Loss: 0.845, Train Accuracy: 68.40%, Test Loss: 0.878, Test Accuracy: 67.60%, Time: 86.39s
+Saved the model with the highest test accuracy: 67.60%
+Epoch 54, Train Loss: 0.834, Train Accuracy: 69.14%, Test Loss: 0.884, Test Accuracy: 67.14%, Time: 89.42s
+Epoch 55, Train Loss: 0.836, Train Accuracy: 68.64%, Test Loss: 0.884, Test Accuracy: 67.97%, Time: 92.39s
+Saved the model with the highest test accuracy: 67.97%
+Epoch 56, Train Loss: 0.825, Train Accuracy: 69.11%, Test Loss: 0.894, Test Accuracy: 67.62%, Time: 87.35s
+Epoch 57, Train Loss: 0.825, Train Accuracy: 69.52%, Test Loss: 0.884, Test Accuracy: 67.73%, Time: 86.76s
+Epoch 58, Train Loss: 0.829, Train Accuracy: 69.16%, Test Loss: 0.882, Test Accuracy: 68.03%, Time: 86.64s
+Saved the model with the highest test accuracy: 68.03%
+Epoch 59, Train Loss: 0.825, Train Accuracy: 69.56%, Test Loss: 0.878, Test Accuracy: 68.31%, Time: 98.01s
+Saved the model with the highest test accuracy: 68.31%
+Epoch 60, Train Loss: 0.819, Train Accuracy: 69.68%, Test Loss: 0.876, Test Accuracy: 67.65%, Time: 87.26s
+Epoch 61, Train Loss: 0.807, Train Accuracy: 69.78%, Test Loss: 0.880, Test Accuracy: 67.87%, Time: 88.36s
+Epoch 62, Train Loss: 0.817, Train Accuracy: 69.52%, Test Loss: 0.883, Test Accuracy: 68.29%, Time: 86.98s
+Epoch 63, Train Loss: 0.811, Train Accuracy: 69.74%, Test Loss: 0.891, Test Accuracy: 67.96%, Time: 87.27s
+Epoch 64, Train Loss: 0.805, Train Accuracy: 70.17%, Test Loss: 0.876, Test Accuracy: 67.82%, Time: 85.97s
+Epoch 65, Train Loss: 0.802, Train Accuracy: 70.07%, Test Loss: 0.876, Test Accuracy: 68.53%, Time: 86.51s
+Saved the model with the highest test accuracy: 68.53%
+Epoch 66, Train Loss: 0.800, Train Accuracy: 70.12%, Test Loss: 0.879, Test Accuracy: 68.10%, Time: 86.35s
+Epoch 67, Train Loss: 0.801, Train Accuracy: 70.24%, Test Loss: 0.885, Test Accuracy: 68.40%, Time: 89.78s
+Epoch 68, Train Loss: 0.792, Train Accuracy: 70.79%, Test Loss: 0.884, Test Accuracy: 68.11%, Time: 86.51s
+Epoch 69, Train Loss: 0.788, Train Accuracy: 70.74%, Test Loss: 0.888, Test Accuracy: 67.73%, Time: 87.50s
+Epoch 70, Train Loss: 0.786, Train Accuracy: 70.85%, Test Loss: 0.891, Test Accuracy: 68.08%, Time: 95.61s
+Epoch 71, Train Loss: 0.786, Train Accuracy: 71.05%, Test Loss: 0.887, Test Accuracy: 68.14%, Time: 88.54s
+Epoch 72, Train Loss: 0.787, Train Accuracy: 70.74%, Test Loss: 0.876, Test Accuracy: 68.68%, Time: 86.73s
+Saved the model with the highest test accuracy: 68.68%
+Epoch 73, Train Loss: 0.778, Train Accuracy: 71.25%, Test Loss: 0.880, Test Accuracy: 68.65%, Time: 87.23s
+Epoch 74, Train Loss: 0.781, Train Accuracy: 71.08%, Test Loss: 0.875, Test Accuracy: 68.61%, Time: 86.21s
+Epoch 75, Train Loss: 0.773, Train Accuracy: 71.47%, Test Loss: 0.872, Test Accuracy: 68.50%, Time: 89.47s
+Epoch 76, Train Loss: 0.774, Train Accuracy: 71.22%, Test Loss: 0.883, Test Accuracy: 68.42%, Time: 86.39s
+Epoch 77, Train Loss: 0.766, Train Accuracy: 71.63%, Test Loss: 0.889, Test Accuracy: 68.64%, Time: 90.21s
+Epoch 78, Train Loss: 0.766, Train Accuracy: 71.67%, Test Loss: 0.870, Test Accuracy: 68.96%, Time: 86.89s
+Saved the model with the highest test accuracy: 68.96%
+Epoch 79, Train Loss: 0.764, Train Accuracy: 71.67%, Test Loss: 0.893, Test Accuracy: 68.10%, Time: 90.93s
+Epoch 80, Train Loss: 0.761, Train Accuracy: 71.67%, Test Loss: 0.876, Test Accuracy: 68.81%, Time: 87.20s
+Epoch 81, Train Loss: 0.763, Train Accuracy: 71.57%, Test Loss: 0.881, Test Accuracy: 69.16%, Time: 89.96s
+Saved the model with the highest test accuracy: 69.16%
+Epoch 82, Train Loss: 0.761, Train Accuracy: 71.70%, Test Loss: 0.879, Test Accuracy: 69.07%, Time: 87.30s
+Epoch 83, Train Loss: 0.750, Train Accuracy: 72.42%, Test Loss: 0.897, Test Accuracy: 68.31%, Time: 86.49s
+Epoch 84, Train Loss: 0.752, Train Accuracy: 72.01%, Test Loss: 0.889, Test Accuracy: 69.02%, Time: 89.21s
+Epoch 85, Train Loss: 0.749, Train Accuracy: 72.20%, Test Loss: 0.870, Test Accuracy: 68.79%, Time: 90.07s
+Epoch 86, Train Loss: 0.746, Train Accuracy: 72.58%, Test Loss: 0.885, Test Accuracy: 68.60%, Time: 86.41s
+Epoch 87, Train Loss: 0.746, Train Accuracy: 72.43%, Test Loss: 0.875, Test Accuracy: 68.95%, Time: 86.27s
+Epoch 88, Train Loss: 0.742, Train Accuracy: 72.69%, Test Loss: 0.884, Test Accuracy: 68.79%, Time: 94.64s
+Epoch 89, Train Loss: 0.740, Train Accuracy: 72.94%, Test Loss: 0.882, Test Accuracy: 69.53%, Time: 86.91s
+Saved the model with the highest test accuracy: 69.53%
+Epoch 90, Train Loss: 0.743, Train Accuracy: 72.64%, Test Loss: 0.892, Test Accuracy: 68.53%, Time: 86.62s
+Epoch 91, Train Loss: 0.726, Train Accuracy: 73.34%, Test Loss: 0.892, Test Accuracy: 69.13%, Time: 86.94s
+Epoch 92, Train Loss: 0.730, Train Accuracy: 72.83%, Test Loss: 0.872, Test Accuracy: 68.93%, Time: 88.77s
+Epoch 93, Train Loss: 0.727, Train Accuracy: 73.41%, Test Loss: 0.892, Test Accuracy: 68.42%, Time: 93.95s
+Epoch 94, Train Loss: 0.727, Train Accuracy: 73.03%, Test Loss: 0.891, Test Accuracy: 68.49%, Time: 86.93s
+Epoch 95, Train Loss: 0.725, Train Accuracy: 73.14%, Test Loss: 0.894, Test Accuracy: 68.85%, Time: 88.26s
+Epoch 96, Train Loss: 0.725, Train Accuracy: 73.11%, Test Loss: 0.865, Test Accuracy: 70.01%, Time: 86.24s
+Saved the model with the highest test accuracy: 70.01%
+Epoch 97, Train Loss: 0.720, Train Accuracy: 73.38%, Test Loss: 0.872, Test Accuracy: 69.34%, Time: 90.08s
+Epoch 98, Train Loss: 0.722, Train Accuracy: 73.06%, Test Loss: 0.881, Test Accuracy: 69.48%, Time: 86.25s
+Epoch 99, Train Loss: 0.719, Train Accuracy: 73.51%, Test Loss: 0.877, Test Accuracy: 69.46%, Time: 89.22s
+Epoch 100, Train Loss: 0.716, Train Accuracy: 73.65%, Test Loss: 0.875, Test Accuracy: 69.11%, Time: 87.23s
+Finished Training
