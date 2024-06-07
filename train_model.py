@@ -134,6 +134,7 @@ def plot_and_save_stats(train_losses, train_accuracies, test_losses, test_accura
 
 def log_and_print_message(log_file, message):
     log_file.write(message + '\n')
+    log_file.flush()
     print(message)
 
 
