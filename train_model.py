@@ -7,10 +7,10 @@ import torch.optim as optim
 import matplotlib.pyplot as plt
 import numpy as np
 import time
+import os
 from Net import Net
 
 
-# Set device
 def set_device():
     if torch.cuda.is_available():
         return torch.device("cuda")
@@ -18,8 +18,8 @@ def set_device():
         return torch.device("mps")
     else:
         return torch.device("cpu")
+    
 
-# Define transformations
 def initialize_transforms():
     transform_train = transforms.Compose([
         transforms.Grayscale(num_output_channels=1),
@@ -40,13 +40,12 @@ def initialize_transforms():
     return transform_train, transform_test
 
 
-# Load datasets
 def load_datasets(transform_train, transform_test):
     trainset = torchvision.datasets.ImageFolder(root='./fer2013/train', transform=transform_train)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=128, shuffle=True, num_workers=2)
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True, num_workers=2)
 
     testset = torchvision.datasets.ImageFolder(root='./fer2013/test', transform=transform_test)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=128, shuffle=False, num_workers=2)
+    testloader = torch.utils.data.DataLoader(testset, batch_size=64, shuffle=False, num_workers=2)
 
     return trainloader, testloader
 
@@ -111,38 +110,31 @@ def save_checkpoint(state_dict, filename='model_checkpoint.pth'):
 
 def plot_and_save_stats(train_losses, train_accuracies, test_losses, test_accuracies, epoch):
     epochs = range(1, epoch + 1)
-    plt.figure(figsize=(12, 4))
+    plt.figure(figsize=(12, 5))
 
-    plt.subplot(1, 3, 1)
-    plt.plot(epochs, train_losses, 'r', label='Training Loss')
-    plt.title('Training Loss')
+    plt.subplot(1, 2, 1)
+    plt.plot(epochs, train_losses, 'g', label='Training Loss')
+    plt.plot(epochs, test_losses, 'r', label='Testing Loss')
+    plt.title('Training and Testing Loss')
     plt.xlabel('Epochs')
     plt.ylabel('Loss')
     plt.legend()
 
-    plt.subplot(1, 3, 2)
-    plt.plot(epochs, train_accuracies, 'b', label='Training Accuracy')
-    plt.title('Training Accuracy')
+    plt.subplot(1, 2, 2)
+    plt.plot(epochs, train_accuracies, 'g', label='Training Accuracy')
+    plt.plot(epochs, test_accuracies, 'r', label='Test Accuracy')
+    plt.title('Training and Testing Accuracy')
     plt.xlabel('Epochs')
     plt.ylabel('Accuracy')
     plt.legend()
 
-    plt.subplot(1, 3, 1)
-    plt.plot(epochs, test_losses, 'r', label='Training Loss')
-    plt.title('Training Loss')
-    plt.xlabel('Epochs')
-    plt.ylabel('Loss')
-    plt.legend()
-
-    plt.subplot(1, 3, 3)
-    plt.plot(epochs, test_accuracies, 'g', label='Test Accuracy')
-    plt.title('Test Accuracy')
-    plt.xlabel('Epochs')
-    plt.ylabel('Accuracy')
-    plt.legend()
-
-    plt.savefig(f'./plots/training_plot_epoch_{epoch}.png')
+    plt.savefig(f'./training_outputs/training_plot.png')
     plt.close()
+
+
+def log_and_print_message(log_file, message):
+    log_file.write(message + '\n')
+    print(message)
 
 
 def main():
@@ -153,11 +145,16 @@ def main():
     trainloader, testloader = load_datasets(transform_train, transform_test)
     net = Net().to(device)
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(net.parameters(), lr=0.001, weight_decay=0.01)
+    optimizer = optim.SGD(net.parameters(), lr=1e-2, momentum=0.9, weight_decay=1e-3)
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'max', factor=0.2, patience=2, min_lr=1e-3)
 
     train_losses, train_accuracies, test_losses, test_accuracies = [], [], [], []
+    best_test_accuracy = 0.0
 
-    print('Starting training. . .')
+    os.makedirs('./training_outputs', exist_ok=True)
+    log_file = open('./training_outputs/model_training_output.txt', 'w')
+    message = 'Starting training . . .'
+    log_and_print_message(log_file, message)
 
     for epoch in range(100):
         start_time = time.time()
@@ -170,14 +167,23 @@ def main():
         test_losses.append(test_loss)
         test_accuracies.append(test_accuracy)
 
-        save_checkpoint(net.state_dict())
-        plot_and_save_stats(train_losses, train_accuracies, test_losses, test_accuracies, epoch)
+        scheduler.step(test_accuracy)
 
         end_time = time.time()
         epoch_time = end_time - start_time
-        print(f'Epoch {epoch+1}, Train Loss: {train_loss:.3f}, Train Accuracy: {train_accuracy:.2f}%, Test Loss: {test_loss:.3f}, Test Accuracy: {test_accuracy:.2f}%, Time: {epoch_time:.2f}s')
+        message = (f'Epoch {epoch+1}, Train Loss: {train_loss:.3f}, Train Accuracy: {train_accuracy:.2f}%, Test Loss: {test_loss:.3f}, Test Accuracy: {test_accuracy:.2f}%, Time: {epoch_time:.2f}s')
+        log_and_print_message(log_file, message)
 
-    print('Finished Training')
+        if test_accuracy > best_test_accuracy:
+            best_test_accuracy = test_accuracy
+            save_checkpoint(net.state_dict())
+            message = (f'Saved the model with the highest test accuracy: {test_accuracy:.2f}%')
+            log_and_print_message(log_file, message)
+            
+        plot_and_save_stats(train_losses, train_accuracies, test_losses, test_accuracies, epoch + 1)
+
+    message = 'Finished Training'
+    log_and_print_message(log_file, message)
 
 
 if __name__ == '__main__':
