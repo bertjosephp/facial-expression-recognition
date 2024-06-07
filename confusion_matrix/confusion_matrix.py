@@ -1,10 +1,13 @@
 import os
+import sys
 import cv2
 import numpy as np
 import torch
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 import torchvision.transforms as transforms
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from Net import Net
 
 def load_test_data(test_dir):
@@ -64,13 +67,13 @@ def evaluate_model(model, test_images, test_labels):
     plt.show()
 
 # Load the model
-filepath = 'emotion_v3.pth'  # Path to the model file
+filepath = '../model_checkpoint.pth'  # Path to the model file
 model = Net()
 model.load_state_dict(torch.load(filepath))
 model.eval()
 
 # Load test data
-test_dir = 'fer2013/test' 
+test_dir = '../fer2013/test' 
 test_images, test_labels = load_test_data(test_dir)
 
 # Evaluate the model and generate confusion matrix
