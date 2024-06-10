@@ -10,8 +10,9 @@ class FaceDetector:
     def __init__(self, source=0, filepath='model_checkpoint.pth'):
         self.face_classifier = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
         self.video_capture = cv2.VideoCapture(source)
-        self.model = Net()
-        self.model.load_state_dict(torch.load(filepath))
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        self.model = Net().to(self.device)
+        self.model.load_state_dict(torch.load(filepath, map_location=self.device))
         self.model.eval()
         self.emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise']
         self.transform = transforms.Compose([
@@ -28,14 +29,14 @@ class FaceDetector:
     def draw_bounding_boxes(self, frame, faces, emotions):
         for (x, y, w, h), emotion in zip(faces, emotions):
             cv2.rectangle(frame, pt1=(x, y), pt2=(x + w, y + h), color=(0, 255, 0), thickness=4)
-            cv2.putText(frame, text=emotion, org=(x, y - 10), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=3, color=(0, 0, 255), thickness=4)
+            cv2.putText(frame, text=emotion, org=(x, y - 10), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(0, 0, 255), thickness=2)
 
     def process_face_region(self, face_region):
         return self.transform(face_region)
 
     def predict_emotion(self, processed_face_region):
         with torch.no_grad():
-            processed_face_region = processed_face_region.unsqueeze(0)
+            processed_face_region = processed_face_region.unsqueeze(0).to(self.device)
             outputs = self.model(processed_face_region)
             _, predicted = torch.max(outputs, 1)
             emotion_index = predicted.item()
@@ -51,7 +52,8 @@ class FaceDetector:
             face_regions = self.detect_face_regions(frame)
             for (x, y, w, h) in face_regions:
                 face_region = frame[y:y+h, x:x+w]
-                processed_face_image = self.process_face_region(face_region)
+                face_region_rgb = cv2.cvtColor(face_region, cv2.COLOR_BGR2RGB)  # Convert to RGB
+                processed_face_image = self.process_face_region(face_region_rgb)
                 predicted_emotion = self.predict_emotion(processed_face_image)
                 predicted_emotions.append(predicted_emotion)
             
@@ -63,3 +65,7 @@ class FaceDetector:
 
         self.video_capture.release()
         cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    face_detector = FaceDetector(filepath='model_checkpoint.pth')
+    face_detector.run()
