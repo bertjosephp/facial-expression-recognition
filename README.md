@@ -2,7 +2,7 @@
 
 ## Overview
 
-This application uses a facial expression recognition model to detect and classify facial expressions in real-time using a webcam. The core of the application is a Convolutional Neural Network (CNN) model, trained on the FER-2013 dataset, which includes 28,709 training images and 3,589 test images categorized into seven different expressions: Angry, Disgust, Fear, Happy, Sad, Surprise, and Neutral. For more detailed information about the dataset, visit [FER-2013 on Kaggle](https://www.kaggle.com/datasets/msambare/fer2013).
+This application uses a facial expression recognition model to detect and classify facial expressions in real-time using a webcam. The core of the application is a Convolutional Neural Network (CNN) model, trained on the FER-2013 dataset, which includes 28,709 training images and 7,178 test images categorized into seven different expressions: Angry, Disgust, Fear, Happy, Sad, Surprise, and Neutral. For more detailed information about the dataset, visit [FER-2013 on Kaggle](https://www.kaggle.com/datasets/msambare/fer2013).
 
 ## Installation
 
@@ -28,6 +28,23 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+
+## Dataset Overview
+
+The FER-2013 dataset is used for training our model. Here's a breakdown of the dataset:
+
+- **Total training images**: 28,709
+- **Total test images**: 7,178
+- **Number of classes**: 7 (Angry, Disgust, Fear, Happy, Sad, Surprise, Neutral)
+
+Below is the distribution of classes in the training dataset, which helps us understand the balance and diversity of the data used for training the model:
+
+![Dataset Distribution](./class_distribution.png)
+*This chart shows how the different expressions are distributed across the training dataset.*
+
+![Sample Images](./sample_images_grid.png)
+*Sample images from each class demonstrate the variety of expressions captured in the training dataset.*
+
 
 ## Model Training
 
